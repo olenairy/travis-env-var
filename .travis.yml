@@ -16,7 +16,7 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t travis-env-var .
-  - docker tag simple-node olenairy/travis-env-var:latest
+  - docker tag travis-env-var olenairy/travis-env-var:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
